@@ -18,12 +18,12 @@ textarea {
 }
 
 .main {
-    align-items: stretch;
-    display: flex;
     flex-direction: column;
+    display: flex;
     flex-wrap: wrap;
     padding: 10px;
     background-color: mistyrose;
+
 }
 
 .search {
@@ -35,7 +35,7 @@ textarea {
 .sidebar {
     display: flex;
     flex-direction: column;
-    height: 97vh;
+    height: 100vh;
     padding: 20px;
     border-right: black solid thin;
 }
@@ -51,16 +51,20 @@ textarea {
 }
 
 .rcolm li {
-    padding-top: 10px;
+    margin: auto;
     text-align: center;
     font-size: xxx-large;
     border: black solid thin;
     margin-top: 10px;
-    width: 35vw;
-    height: 10vh;
+    width: 18vw;
+    height: 18vh;
     background-color: lavender;
 }
 
 ul {
     list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
 }
+
