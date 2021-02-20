@@ -6,7 +6,7 @@ from django.core.files.storage import default_storage
 
 def list_entries():
     """
-    Returns a list of all names of encyclopedia entries.
+    Returns a list of all names of portfolio entries.
     """
     _, filenames = default_storage.listdir("entries")
     return list(sorted(re.sub(r"\.md$", "", filename)
@@ -15,7 +15,7 @@ def list_entries():
 
 def save_entry(title, content):
     """
-    Saves an encyclopedia entry, given its title and Markdown
+    Saves an portfolio entry, given its title and Markdown
     content. If an existing entry with the same title already exists,
     it is replaced.
     """
@@ -27,7 +27,7 @@ def save_entry(title, content):
 
 def get_entry(title):
     """
-    Retrieves an encyclopedia entry by its title. If no such
+    Retrieves an portfolio entry by its title. If no such
     entry exists, the function returns None.
     """
     try:

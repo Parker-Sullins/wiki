@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    background-color: white;
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+textarea {
+    height: 90vh;
+    width: 80%;
+}
+
+.main {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: mistyrose;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 97vh;
+    padding: 20px;
+    border-right: black solid thin;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}
+
+.sidebar div {
+    font-family: sans-serif;
+    font-size: large;
+
+}
+
+.rcolm li {
+    padding-top: 10px;
+    text-align: center;
+    font-size: xxx-large;
+    border: black solid thin;
+    margin-top: 10px;
+    width: 35vw;
+    height: 10vh;
+    background-color: lavender;
+}
+
+ul {
+    list-style-type: none;
+}
