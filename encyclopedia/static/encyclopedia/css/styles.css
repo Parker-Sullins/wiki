@@ -53,9 +53,9 @@ textarea {
 .rcolm li {
     margin: auto;
     text-align: center;
-    font-size: xxx-large;
+    font-size: xx-large;
     border: black solid thin;
-    margin-top: 10px;
+    margin-top: 30px;
     width: 18vw;
     height: 18vh;
     background-color: lavender;
@@ -67,4 +67,3 @@ ul {
     flex-wrap: wrap;
     padding-left: 15px;
 }
-

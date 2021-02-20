@@ -5,8 +5,8 @@ from markdown2 import markdown, markdown_path
 
 hey = markdown_path('media/entries/Git.md')
 
-def return_markdown(text):
-    y
+
+
 
 
 def home(request):
