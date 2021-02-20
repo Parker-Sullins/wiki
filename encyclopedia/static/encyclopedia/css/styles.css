@@ -8,7 +8,7 @@ code {
 }
 
 h1 {
-    margin-top: 0px;
+    margin-left: 10px;
     padding-top: 20px;
 }
 
@@ -23,7 +23,8 @@ textarea {
     flex-wrap: wrap;
     padding: 10px;
     background-color: mistyrose;
-
+    max-width: 64vw;
+    border: black solid thin;
 }
 
 .search {
@@ -51,14 +52,15 @@ textarea {
 }
 
 .rcolm li {
-    margin: auto;
     text-align: center;
     font-size: xx-large;
     border: black solid thin;
-    margin-top: 30px;
+    border-radius: 5px;
     width: 18vw;
     height: 18vh;
     background-color: lavender;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 ul {
@@ -66,4 +68,37 @@ ul {
     display: flex;
     flex-wrap: wrap;
     padding-left: 15px;
+}
+
+.testing {
+    display: table;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+input#id_description {
+    width: 62.5vw;
+    margin-right: 10vw;
+    padding-bottom: 30vh;
+    padding-top: 1.5vh;
+    height: 5vh;
+    font-size: x-large;
+}
+
+input#id_title {
+    width: 62.5vw;
+    margin-right: 10vw;
+    height: 10vh;
+    font-size: xxx-large;
+}
+
+input[type="submit"] {
+
+}
+
+.testtest {
+    background-color: lavender;
+    border: black solid thin;
+    border-radius: 5px;
+    padding: 10px;
 }

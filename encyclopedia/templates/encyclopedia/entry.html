@@ -1,10 +1,14 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    {{ entry.title }}
+    {{ title | safe }}
 {% endblock %}
 
 {% block body %}
-    <h1>All Pages</h1>
-    {{ entry|safe }}
+    <div class="testtest">
+        <h1>{{ entry |safe }}</h1>
+        <a href="/entry/{{ title }}/edit/">
+            <button type="submit" class="edit-button">Edit</button>
+        </a>
+    </div>
 {% endblock %}

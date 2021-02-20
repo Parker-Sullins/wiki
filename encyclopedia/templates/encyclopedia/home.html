@@ -8,10 +8,19 @@
 {% block body %}
     <h1>All Pages</h1>
     <div class="rcolm">
-        <ul>
-            {% for entry in entries %}
-                <li><a href="{% url 'encyclopedia:entry' %}">{{ entry }}</a></li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {% for entry in entries %}
+                    <div class="testing">
+                        <li>
+                            <a href="/entry/{{ entry }}/">{{ entry }}</a>
+                        </li>
+                    </div>
+                {% endfor %}
+            </ul>
     </div>
 {% endblock %}
+
+
+
+            {{ form }}
+

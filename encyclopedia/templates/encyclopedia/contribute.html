@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+    <div>
+    <h1>Contribute Content to Help Keep Program-Wiki Up to Date!</h1>
+        <form action="{% url 'encyclopedia:contribute' %}" method="post">
+            {% csrf_token %}
+            <div class="add-entry">
+                {{ form }}
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
