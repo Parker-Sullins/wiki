@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . import util
-from markdown2 import markdown, markdown_path
+from markdown2 import markdown_path
 from django import forms
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -24,9 +24,11 @@ def index(request):
 
 def entry(request, title):
     title = title
-    entry = markdown_path('media/entries/' + title + '.md', extras=["break-on-newline"])
+    if util.get_entry(title) is None:
+        return render(request, "encyclopedia/error.html", {'title': title})
+    entry_formatted = markdown_path('media/entries/' + title + '.md', extras=["break-on-newline"])
     return render(request, "encyclopedia/entry.html", {
-        'entry': entry,
+        'entry': entry_formatted,
         'title': title
     })
 
@@ -66,3 +68,7 @@ def edit(request, title):
         'title': title,
         'form': form
     })
+
+
+def error(request, catch):
+    return render(request, "encyclopedia/error.html", {"catch": catch})

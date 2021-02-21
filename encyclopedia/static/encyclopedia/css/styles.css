@@ -24,7 +24,7 @@ textarea {
     padding: 10px;
     background-color: mistyrose;
     max-width: 64vw;
-    border: black solid thin;
+    border: black solid thick;
 }
 
 .search {
@@ -38,7 +38,6 @@ textarea {
     flex-direction: column;
     height: 100vh;
     padding: 20px;
-    border-right: black solid thin;
 }
 
 .sidebar h2 {
@@ -101,4 +100,14 @@ input[type="submit"] {
     border: black solid thin;
     border-radius: 5px;
     padding: 10px;
+}
+
+.error-404 {
+    background-color: white;
+    margin-left: 15vw;
+    margin-top: 30vh;
+    text-align: center;
+    width: 30vw;
+    height: 20vh;
+    border: red solid thick;
 }
