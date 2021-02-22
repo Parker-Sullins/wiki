@@ -22,10 +22,21 @@ class EditForm(forms.Form):
     description = forms.CharField(widget=forms.Textarea)
 
 
+"""
+ rand_list = random.choice(util.list_entries())
+ 
+Stores a random entry to redirect the user to if the 
+random button is clicked. Had to be accessible from 
+every instance of,  render(request, URL), as template URL tags 
+were not able to take arguments as I was expecting.
+Refactoring needed.
+"""
+
+
 def index(request):
     rand_list = random.choice(util.list_entries())
     """
-    View function For landing page. Links to home.html
+    View function For landing page. Links to home.html.
     Displays all current entries.
     """
     request.session["entries"] = util.list_entries()
@@ -55,7 +66,6 @@ def entry(request, title):
 def contribute(request):
     rand_list = random.choice(util.list_entries())
     """
-    If method == GET, returns a blank form to add a new entry.
     If method == POST, checks if entry already exist & displays warning, 
     if not, it adds entry to /entries/ and redirects to the home page
     """
@@ -81,6 +91,9 @@ def contribute(request):
             return render(request, "encyclopedia/contribute.html", {
                 "form": form
             })
+    """
+    If method == GET, returns a blank form to add a new entry.
+    """
     return render(request, "encyclopedia/contribute.html", {
             'form': NewEntryForm(),
             "random": rand_list
@@ -89,12 +102,6 @@ def contribute(request):
 
 def edit(request, title):
     rand_list = random.choice(util.list_entries())
-    """
-    Pre Populates the Edit Textarea with existing description
-    """
-    pre_populate = util.get_entry(title)
-    pre_populate = pre_populate.replace(("#" + title), "", 1)
-    f = EditForm(initial={'description': pre_populate})
     """
     If method == Post, it updates the entries' description
     """
@@ -110,8 +117,12 @@ def edit(request, title):
             return render(request, "encyclopedia/contribute.html", {"form": form})
     """
     If method == Get, it populates the form with
-     the existing description for each entry
+    the existing description for each entry
      """
+    pre_populate = util.get_entry(title)
+    pre_populate = pre_populate.replace(("#" + title), "", 1)
+    f = EditForm(initial={'description': pre_populate})
+
     return render(request, "encyclopedia/edit.html", {
         'title': title,
         'form': f,
@@ -137,7 +148,7 @@ def search_results(request):
     existing entries to identify if the search is a sub-string
     of any entries. Will return all entries in which the input
     is a sub string. If the Input is an exact match for an entry, it redirects straight
-    to the url for that entry. If the input is a sub string on no entries
+    to the url for that entry. If the input is a sub string of no entries
     it returns a DNE warning.
     """
     rand_list = random.choice(util.list_entries())
@@ -148,7 +159,7 @@ def search_results(request):
         search_query = request.POST.get("q").lower()
         for x in all_entries:
             if search_query == x.lower():
-                return HttpResponseRedirect("/wiki/" + search_query + "/")
+                return HttpResponseRedirect("/wiki/" + search_query.capitalize() + "/")
         for entry in converted_entries:
             if search_query in entry:
                 query_entries.append(entry)
