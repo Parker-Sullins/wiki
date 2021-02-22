@@ -3,9 +3,9 @@
 {% block body %}
     <h3>Edit Content for:</h3>
     <h1>{{ title }}</h1>
-     <form action="/entry/{{ title }}/edit/" method="post">
+     <form action="/wiki/{{ title }}/edit/" method="post">
             {% csrf_token %}
-            <div class="add-entry">
+            <div class="add-entry" id="edit">
                 {{ form }}
             </div>
             <input type="submit">
